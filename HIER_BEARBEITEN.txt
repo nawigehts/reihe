@@ -1,0 +1,16 @@
+NAWI GEHT'S? – SCHNELLANLEITUNG
+
+Für neue oder geänderte Bücher brauchst du normalerweise nur:
+
+1. daten/buecher.csv
+   Jede ZEILE = ein Buch.
+   Jede SPALTE = eine Eigenschaft oder ein Material-Link.
+
+2. assets/covers/
+   Hier die Coverbilder ablegen.
+
+Neue Materialart gewünscht?
+Einfach in buecher.csv eine neue Spalte anlegen, deren Name mit link_ beginnt,
+z. B. link_Video oder link_Experimente.
+
+Alles Weitere steht in README.md.

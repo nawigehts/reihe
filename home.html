@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NaWi geht’s? – Kinderbücher und Materialien zu naturwissenschaftlichen Themen.">
+  <meta name="theme-color" content="#0797ee">
+  <title>NaWi geht’s? – Bücher & Materialien</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logos/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/logos/favicon-180.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#buecher">Direkt zu den Büchern</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand brand-project" href="https://www.physikdidaktik.ovgu.de/Projekte/NaWi+geht_s_-p-451.html" target="_blank" rel="noopener noreferrer" aria-label="NaWi geht’s? – Projektseite">
+        <img src="assets/logos/nawi-gehts.png" alt="NaWi geht’s?">
+      </a>
+      <a class="brand brand-university" href="https://www.physikdidaktik.ovgu.de/" target="_blank" rel="noopener noreferrer" aria-label="Fakultät für Naturwissenschaften – Physikdidaktik der Otto-von-Guericke-Universität Magdeburg">
+        <img src="assets/logos/ovgu-fnw.png" alt="Otto-von-Guericke-Universität Magdeburg – Fakultät für Naturwissenschaften">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Kinderbücher · Naturwissenschaften · Materialien</p>
+        <h1 id="hero-title">NaWi geht’s?</h1>
+        <p class="hero-text">
+          Die Reihe macht naturwissenschaftliche Themen in Kinderbüchern zugänglich und greift typische Vorstellungen aus dem Alltag auf. Ergänzend zu den Büchern können Materialien für Lehrkräfte, Erziehende und alle Interessierten bereitgestellt werden.
+        </p>
+        <a class="project-link" href="https://www.physikdidaktik.ovgu.de/Projekte/NaWi+geht_s_-p-451.html" target="_blank" rel="noopener noreferrer">Mehr über das Projekt</a>
+      </div>
+    </section>
+
+    <section class="catalogue" id="buecher" aria-labelledby="catalogue-title">
+      <div class="catalogue-heading">
+        <div>
+          <p class="eyebrow">Die Reihe</p>
+          <h2 id="catalogue-title">Bücher & Materialien</h2>
+          <p class="catalogue-intro">Suche nach Titel, Autor:in, Thema oder Stichwort.</p>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="toolbar" aria-label="Bücher durchsuchen, sortieren und Ansicht wählen">
+        <label class="search-wrap" for="search">
+          <span class="search-label">Suche</span>
+          <input id="search" type="search" autocomplete="off" placeholder="z. B. Farben, Licht, Energie …">
+        </label>
+        <div class="toolbar-switches">
+          <div class="view-switch" role="group" aria-label="Ansicht">
+            <button id="grid-view" class="view-button is-active" type="button" aria-pressed="true">Kacheln</button>
+            <button id="list-view" class="view-button" type="button" aria-pressed="false">Liste</button>
+          </div>
+          <div class="view-switch" role="group" aria-label="Sortierung">
+            <button id="sort-asc" class="view-button is-active" type="button" aria-pressed="true">Aufsteigend</button>
+            <button id="sort-desc" class="view-button" type="button" aria-pressed="false">Neueste zuerst</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="book-list" class="book-list grid-view" aria-live="polite"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <h3>Keine Treffer</h3>
+        <p>Versuche einen anderen Suchbegriff oder lösche die Suche.</p>
+        <button id="clear-search" type="button">Suche zurücksetzen</button>
+      </div>
+
+      <div id="load-error" class="load-error" hidden>
+        <h3>Die Buchdaten konnten nicht geladen werden.</h3>
+        <p>Auf GitHub Pages funktioniert die Seite direkt. Beim Öffnen der HTML-Datei vom eigenen Rechner blockieren einige Browser das Laden der CSV-Datei.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p><strong>NaWi geht’s?</strong> · Otto-von-Guericke-Universität Magdeburg</p>
+        <p class="footer-links"><a href="https://www.physikdidaktik.ovgu.de/Projekte/NaWi+geht_s_-p-451.html" target="_blank" rel="noopener noreferrer">Projektseite</a> · <a href="https://www.physikdidaktik.ovgu.de/" target="_blank" rel="noopener noreferrer">Physikdidaktik</a></p>
+      </div>
+      <details class="imprint">
+        <summary>Impressum</summary>
+        <div class="imprint-text">
+          <p>Otto-von-Guericke-Universität Magdeburg<br>Universitätsplatz 2 · 39106 Magdeburg</p>
+          <p><a href="https://www.ovgu.de/Impressum.html" target="_blank" rel="noopener noreferrer">Vollständiges Impressum der Universität</a></p>
+        </div>
+      </details>
+    </div>
+  </footer>
+
+  <template id="book-template">
+    <article class="book-card">
+      <div class="book-cover-wrap">
+        <div class="book-number" aria-hidden="true"></div>
+        <div class="cover-placeholder" aria-hidden="true">
+          <span class="cover-placeholder-small">NaWi geht’s?</span>
+          <span class="cover-placeholder-title"></span>
+        </div>
+        <img class="book-cover" alt="" loading="lazy">
+      </div>
+      <div class="book-content">
+        <div class="book-heading">
+          <p class="book-kicker"></p>
+          <h3 class="book-title"></h3>
+          <p class="book-author"></p>
+        </div>
+        <p class="book-description"></p>
+        <div class="book-links" aria-label="Materialien und Links"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
