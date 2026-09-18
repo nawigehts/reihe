@@ -103,7 +103,6 @@
     fragment.querySelector('.book-title').textContent = book.titel || 'Titel folgt';
     fragment.querySelector('.book-author').textContent = book.autor || 'Autor:in folgt';
     fragment.querySelector('.book-description').textContent = book.kurzbeschreibung || 'Kurzbeschreibung folgt.';
-    fragment.querySelector('.cover-placeholder-title').textContent = book.titel || `Buch ${book.nr || ''}`;
 
     const src = coverPath(book.bild);
     if (src) {
