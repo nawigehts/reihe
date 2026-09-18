@@ -101,7 +101,9 @@
     fragment.querySelector('.book-number').textContent = book.nr || '—';
     fragment.querySelector('.book-kicker').textContent = book.nr ? `Band ${book.nr}` : 'NaWi geht’s?';
     fragment.querySelector('.book-title').textContent = book.titel || 'Titel folgt';
-    fragment.querySelector('.book-author').textContent = book.autor || 'Autor:in folgt';
+    const authorText = book.autor || 'Autor:in folgt';
+    const yearText = book.jahr ? ` · ${book.jahr}` : '';
+    fragment.querySelector('.book-author').textContent = authorText + yearText;
     fragment.querySelector('.book-description').textContent = book.kurzbeschreibung || 'Kurzbeschreibung folgt.';
 
     const src = coverPath(book.bild);
