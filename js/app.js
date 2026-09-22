@@ -1,6 +1,6 @@
 (() => {
   const CSV_URL = 'daten/buecher.csv';
-  const COVER_BASE = 'assets/covers/';
+  const MEDIA_BASE = 'medien/';
 
   const list = document.querySelector('#book-list');
   const template = document.querySelector('#book-template');
@@ -76,11 +76,19 @@
       .replace(/[\u0300-\u036f]/g, '');
   }
 
-  function coverPath(value) {
-    const image = (value || '').trim();
-    if (!image) return '';
-    if (/^(https?:)?\/\//i.test(image) || image.startsWith('/') || image.includes('/')) return image;
-    return COVER_BASE + image;
+  function mediaPath(book, value) {
+    const file = (value || '').trim();
+    if (!file) return '';
+    // Externe URLs und bereits vollständige Pfade unverändert lassen
+    if (
+      /^(https?:)?\/\//i.test(file) ||
+      file.startsWith('/') ||
+      file.includes('/')
+    ) {
+      return file;
+    }
+    // Einfache Dateinamen automatisch dem jeweiligen Buchordner zuordnen
+    return `${MEDIA_BASE}${book.nr}/${file}`;
   }
 
   function linkLabel(column) {
@@ -106,7 +114,7 @@
     fragment.querySelector('.book-author').textContent = authorText + yearText;
     fragment.querySelector('.book-description').textContent = book.kurzbeschreibung || 'Kurzbeschreibung folgt.';
 
-    const src = coverPath(book.bild);
+    const src = mediaPath(book, book.bild);
     if (src) {
       cover.src = src;
       cover.alt = `Cover von ${book.titel || 'Buch ' + (book.nr || '')}`;
@@ -132,7 +140,7 @@
       const anchor = document.createElement('a');
       anchor.className = 'book-link';
       if (index === 0) anchor.classList.add('is-primary');
-      anchor.href = url;
+      anchor.href = mediaPath(book, url);
       anchor.textContent = linkLabel(column);
       anchor.target = '_blank';
       anchor.rel = 'noopener noreferrer';
