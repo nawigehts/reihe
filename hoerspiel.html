@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Hörspiel zur Kinderbuchreihe NaWi geht’s?">
+  <meta name="theme-color" content="#0797ee">
+
+  <title>Hörspiel · NaWi geht’s?</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logos/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/logos/favicon-180.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hoerspiel.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#hoerspiel">
+    Direkt zum Hörspiel
+  </a>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a
+        class="brand brand-project"
+        href="https://www.physikdidaktik.ovgu.de/Projekte/NaWi+geht_s_-p-451.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="NaWi geht’s? – Projektseite"
+      >
+        <img
+          src="assets/logos/nawi-gehts.png"
+          alt="NaWi geht’s?"
+        >
+      </a>
+
+      <a
+        class="brand brand-university"
+        href="https://www.physikdidaktik.ovgu.de/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Physikdidaktik der Otto-von-Guericke-Universität Magdeburg"
+      >
+        <img
+          src="assets/logos/ovgu-fnw.png"
+          alt="Otto-von-Guericke-Universität Magdeburg – Fakultät für Naturwissenschaften"
+        >
+      </a>
+
+    </div>
+  </header>
+
+
+  <main id="hoerspiel" class="audio-page">
+
+    <div class="audio-page-inner">
+
+      <a class="audio-back-link" href="home.html">
+        ← Zurück zu Bücher & Materialien
+      </a>
+
+
+      <section id="audio-card" class="audio-card" hidden>
+
+        <div class="audio-cover-column">
+
+          <div class="audio-cover-wrap">
+
+            <span
+              id="audio-book-number"
+              class="book-number"
+              aria-hidden="true"
+            ></span>
+
+            <div
+              id="audio-cover-placeholder"
+              class="audio-cover-placeholder"
+              aria-hidden="true"
+            ></div>
+
+            <img
+              id="audio-cover"
+              class="audio-cover"
+              alt=""
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="audio-main">
+
+          <header class="audio-heading">
+
+            <p class="eyebrow">
+              Hörspiel · <span id="audio-band"></span>
+            </p>
+
+            <h1 id="audio-title">
+              Hörspiel
+            </h1>
+
+            <p id="audio-meta" class="audio-meta"></p>
+
+            <p
+              id="audio-description"
+              class="audio-description"
+            ></p>
+
+            <p
+              id="audio-speaker"
+              class="audio-speaker"
+              hidden
+            ></p>
+
+          </header>
+
+
+          <section class="player-box" aria-label="Audioplayer">
+
+            <audio
+              id="audio"
+              preload="metadata"
+            ></audio>
+
+
+            <div class="audio-time-row">
+              <span id="current-time">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+
+
+            <label class="audio-slider-label" for="progress">
+              Position
+            </label>
+
+            <input
+              id="progress"
+              class="audio-slider"
+              type="range"
+              min="0"
+              max="100"
+              step="0.1"
+              value="0"
+              aria-label="Position im Hörspiel"
+            >
+
+
+            <div class="audio-controls">
+
+              <button
+                id="backward-btn"
+                class="audio-button audio-button-secondary"
+                type="button"
+              >
+                −10 s
+              </button>
+
+              <button
+                id="play-pause-btn"
+                class="audio-button audio-button-primary"
+                type="button"
+              >
+                Start
+              </button>
+
+              <button
+                id="forward-btn"
+                class="audio-button audio-button-secondary"
+                type="button"
+              >
+                +10 s
+              </button>
+
+              <button
+                id="stop-btn"
+                class="audio-button audio-button-secondary"
+                type="button"
+              >
+                Stop
+              </button>
+
+            </div>
+
+
+            <div class="audio-volume">
+
+              <label class="audio-slider-label" for="volume">
+                Lautstärke
+              </label>
+
+              <input
+                id="volume"
+                class="audio-slider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                aria-label="Lautstärke"
+              >
+
+            </div>
+
+          </section>
+
+
+          <section
+            id="audio-materials-section"
+            class="audio-materials"
+            hidden
+          >
+
+            <h2>Weitere Materialien zu diesem Buch</h2>
+
+            <div
+              id="audio-materials"
+              class="audio-material-links"
+            ></div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+
+      <section
+        id="audio-error"
+        class="audio-error"
+        hidden
+      >
+        <h1>Hörspiel nicht gefunden</h1>
+
+        <p id="audio-error-text">
+          Das gewünschte Hörspiel konnte nicht geladen werden.
+        </p>
+
+        <a class="project-link" href="home.html">
+          Zur Buchübersicht
+        </a>
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div>
+        <p>
+          <strong>NaWi geht’s?</strong>
+          · &copy; 2026
+          · Lukas Mientus
+          · Otto-von-Guericke-Universität Magdeburg
+        </p>
+      </div>
+
+      <details class="imprint">
+
+        <summary>Impressum</summary>
+
+        <div class="imprint-text">
+          <p>
+            Prof. Dr. rer. nat. Lukas Mientus<br>
+            Institut für Physik · Fakultät für Naturwissenschaften<br>
+            Otto-von-Guericke-Universität Magdeburg<br>
+            Universitätsplatz 2 · 39106 Magdeburg
+          </p>
+        </div>
+
+      </details>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/hoerspiel.js" defer></script>
+
+</body>
+</html>
