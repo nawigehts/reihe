@@ -222,6 +222,14 @@ h2 {
     box-shadow 0.22s ease,
     border-color 0.22s ease;
 }
+@media (hover: hover) {
+  .book-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+    border-top-color: var(--orange);
+    box-shadow: 0 20px 44px rgba(5, 109, 169, 0.18);
+  }
+}
 .grid-view .book-card { display: grid; grid-template-rows: 240px 1fr; }
 .book-cover-wrap {
   position: relative;
