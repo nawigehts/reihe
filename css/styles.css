@@ -217,6 +217,10 @@ h2 {
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 .grid-view .book-card { display: grid; grid-template-rows: 240px 1fr; }
 .book-cover-wrap {
