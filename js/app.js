@@ -94,7 +94,16 @@
   function linkLabel(column) {
     return column.slice(5).replaceAll('_', ' ').trim();
   }
-
+  
+  function isAudioColumn(column) {
+    const key = normalize(column)
+      .replace(/[^a-z0-9]/g, '');
+    return (
+      key === 'linkhorspiel' ||
+      key === 'linkhoerspiel'
+    );
+  }
+  
   function isPlaceholderLink(url) {
     return ['#', 'PLATZHALTER', 'platzhalter'].includes((url || '').trim());
   }
@@ -139,11 +148,21 @@
 
       const anchor = document.createElement('a');
       anchor.className = 'book-link';
-      if (index === 0) anchor.classList.add('is-primary');
-      anchor.href = mediaPath(book, url);
+      if (index === 0) {
+        anchor.classList.add('is-primary');
+      }
       anchor.textContent = linkLabel(column);
-      anchor.target = '_blank';
-      anchor.rel = 'noopener noreferrer';
+      if (isAudioColumn(column)) {
+        anchor.href =
+          `hoerspiel.html?buch=${encodeURIComponent(book.nr)}`;
+        anchor.target = '_self';
+      } else {
+        anchor.href =
+          mediaPath(book, url);
+        anchor.target = '_blank';
+        anchor.rel =
+          'noopener noreferrer';
+      }
       links.appendChild(anchor);
     });
 
