@@ -1,5 +1,5 @@
 nr;titel;autor;jahr;kurzbeschreibung;themen;bild;link_Kaufen;link_PDF-Buch;link_Material_für_Lehrkräfte;link_Hörspiel
-001;Augen Auf! Jetzt wird's bunt;Bastian Geppert;2026;Beschreibung...;Optik;cover.png;https://...;buch.pdf;core.pdf;hoerspiel.mp3
-002;Luft ist doch nichts?;Charlotte Dittmann;2026;Beschreibung...;Mechanik;cover.png;https://...;buch.pdf;core.pdf;
-003;Buch 3;Autor 3;2026;Beschreibung...;Mechanik;cover.png;https://...;buch.pdf;core.pdf;
-004;Schwerelos in der Raumstation;Lukas Mientus;2026;Beschreibung...;Mechanik;cover.png;https://...;buch.pdf;core.pdf;
+001;Augen Auf! Jetzt wird's bunt;Bastian Geppert;2026;Beschreibung...;Optik;cover.png;;buch.pdf;core.pdf;
+002;Luft ist doch nichts?;Charlotte Dittmann;2026;Beschreibung...;Mechanik;cover.png;;buch.pdf;core.pdf;
+003;Buch 3;Autor 3;2026;Beschreibung...;Mechanik;;;;;
+004;Schwerelos in der Raumstation;Lukas Mientus;2026;Beschreibung...;Mechanik;cover.png;;buch.pdf;core.pdf;
