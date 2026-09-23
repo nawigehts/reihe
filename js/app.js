@@ -1,6 +1,6 @@
 (() => {
   const CSV_URL = 'daten/buecher.csv';
-  const MEDIA_BASE = 'medien/';
+  const MEDIA_BASE = 'daten/medien/';
 
   const list = document.querySelector('#book-list');
   const template = document.querySelector('#book-template');
