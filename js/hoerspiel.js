@@ -600,6 +600,12 @@
       );
     }
 
+    if (book.sprecher) {
+      metaParts.push(
+        book.sprecher
+      );
+    }
+
 
     if (book.jahr) {
       metaParts.push(
