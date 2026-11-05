@@ -120,7 +120,8 @@
     fragment.querySelector('.book-title').textContent = book.titel || 'Titel folgt';
     const authorText = book.autor || 'Autor:in folgt';
     const yearText = book.jahr ? ` · ${book.jahr}` : '';
-    fragment.querySelector('.book-author').textContent = authorText + yearText;
+    const isbnText = book.ISBN ? ` · ISBN ${book.ISBN}`: '';
+    fragment.querySelector('.book-author').textContent = authorText + yearText + isbnText;
     fragment.querySelector('.book-description').textContent = book.kurzbeschreibung || 'Kurzbeschreibung folgt.';
 
     const src = mediaPath(book, book.bild);
